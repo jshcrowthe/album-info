@@ -18,10 +18,18 @@
     "/test/"
   ],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0"
+    "polymer": "Polymer/polymer#^1.1.0",
+    "fs-button": "jshcrowthe/fs-button",
+    "fs-styles": "fs-webdev/fs-styles#~1.8.0",
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#~1.0.3",
+    "layout": "Polymer/layout",
+    "iron-ajax": "PolymerElements/iron-ajax#~1.1.0"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*"
+  },
+  "resolutions": {
+    "polymer": "^1.2.0"
   }
 }

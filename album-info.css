@@ -1,0 +1,51 @@
+:host {
+  display: block;
+  --meta-control-margin: 0 0 0 7px;
+  width: 100%;
+  max-width:500px;
+  margin:0 auto;
+}
+
+h4 {
+  margin: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+div,input,textarea {
+  width: 100%;
+}
+
+.action {
+  color: #0060d7;
+}
+
+.action:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.chars-remaining {
+  float: right;
+}
+
+.content {
+  margin: 0 0 13px;
+}
+
+.meta-controls .action {
+  margin: var(--meta-control-margin);
+}
+
+.meta-controls .action:after {
+  display: inline-block;
+  color: #333333;
+  content: '|';
+  margin: var(--meta-control-margin);
+}
+
+.meta-controls .action:last-child:after {
+  content: '';
+}

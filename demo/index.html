@@ -14,35 +14,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>album-info Demo</title>
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script>
+    window.Polymer = window.Polymer || { dom: 'shadow' };
+    </script>
     <link rel="import" href="../album-info.html">
+    <style>
+      album-info {
+        margin-bottom: 50px;
+      }
+    </style>
   </head>
   <body unresolved>
 
     <p>An example of <code>&lt;album-info&gt;</code>:</p>
 
-    <p>Make words! <button id="saybtn">Say Something</button></p>
-    <p>Make lasers! <button id="laserbtn">Fire lasers</button></p>
-
-    <album-info author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-      <h2>Hello album-info</h2>
-    </album-info>
-
-    <script>
-      var seedElement = document.querySelector('album-info');
-      
-      document.querySelector('#saybtn').addEventListener('click', function() {
-        alert(seedElement.sayHello('Hallo!'));
-      });
-      
-      document.querySelector('#laserbtn').addEventListener('click', function() {
-        seedElement.fireLasers();
-      });
-      
-      document.addEventListener("album-info-lasers", function(e) {
-        console.log(e.detail.sound);
-      });
-      
-    </script>
-
+    <album-info album='{"id":114959,"name":"Bug Test","description":"","contributorPatronId":556427,"restrictionState":"OK","creationDatetime":1438802223000,"slug":"bug-test","thumbUrl":"https://beta.familysearch.org/patron/v2/TH-903-57669-3-5/thumb200.jpg?ctx=ArtCtxPublic","thumbSquareUrl":"https://beta.familysearch.org/patron/v2/TH-903-57669-3-5/thumb200s.jpg?ctx=ArtCtxPublic","thumbIconUrl":"https://beta.familysearch.org/patron/v2/TH-903-57669-3-5/thumb64.jpg?ctx=ArtCtxPublic","artifactCount":5,"visitCount":0,"seoIndexable":true,"uploaderId":556427,"editableByCaller":true,"favorite":false}'></album-info>
   </body>
 </html>
