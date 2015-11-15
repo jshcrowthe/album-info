@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../fs-styles/fs-styles.html">
 <link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html">
 <link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../fs-behavior/fs-behavior.html">
 <!--
 An element providing a solution to no problem in particular.
 
@@ -84,31 +85,16 @@ Example:
 </dom-module>
 <script>
 (function() {
-  function readCookie(name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
-      var c = ca[i];
-      while (c.charAt(0)==' ') c = c.substring(1,c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-    }
-    return null;
-  }
   Polymer({
 
     is: 'album-info',
 
+    behaviors: [
+      FSBehavior
+    ],
+
     properties: {
       // PRIVATE PROPS
-      _base: {
-        type: String,
-        value: function() {
-          if (~location.origin.indexOf('familysearch.org')) {
-            return location.origin;
-          }
-          return 'https://beta.familysearch.org';
-        }
-      },
       _editingTitle: {
         type: Boolean,
         value: false
@@ -117,18 +103,6 @@ Example:
       _editingDesc: {
         type: Boolean,
         value: false
-      },
-
-      _headers: {
-        type: Object,
-        value: function() {
-          var fssessionid = readCookie('fssessionid');
-          return {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Authorization': fssessionid ? ('Bearer ' + fssessionid) : ''
-          }
-        }
       },
 
       _newAlbum: {
