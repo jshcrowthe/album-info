@@ -59,7 +59,7 @@ Example:
 
     <!-- Description Display and Edit -->
     <div class="layout vertical center content">
-      <span class='action' on-click='_toggleEditDescription' hidden='[[!album.description]]'>Edit Title</span>
+      <span class='action' on-click='_toggleEditDescription' hidden='[[!album.description]]'>Edit Description</span>
       <p hidden='[[_editingDesc]]'>[[album.description]]</p>
       <div hidden='[[!_editingDesc]]'>
         <iron-a11y-keys target="[[_descInput]]" keys="enter" on-keys-pressed="_saveEdits"></iron-a11y-keys>
