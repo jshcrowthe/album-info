@@ -179,7 +179,7 @@ Example:
 
     _saveEdits: function() {
       // Catch null title on key save
-      if (this._editingTitle && this._newAlbum && !this._newAlbum.name) return;
+      if (this._editingTitle && (!this._newAlbum || !this._newAlbum.name)) return;
 
       // Fire off request to save album
       this.$.req.generateRequest();
